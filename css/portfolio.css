@@ -34,6 +34,12 @@ a {
 img {
   display: block;
 }
+.h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 800; }
+.section { padding: 88px 0; }
+.divider {
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
 
 /* 헤더 */
 .header {
@@ -51,7 +57,6 @@ img {
   align-items: center;
   padding: 14px;
 }
-
 .brand {
   display: flex;
   align-items: center;
@@ -82,11 +87,8 @@ img {
 .nav a:hover {
   opacity: 1;
 }
-.nav a.active {
-  background: rgba(255,255,255,.1);
-}
 .cta {
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(255, 255, 255, .2);
   border-radius: 999px;
 }
 
@@ -99,7 +101,8 @@ img {
   display: block;
   height: 4px; width: 0;
   background: #fff;
-  transition: width .15s; }
+  transition: width .25s;
+}
 
 /* Hero */
 .hero {
@@ -112,6 +115,9 @@ img {
   display: grid;
   gap: 32px;
   grid-template-columns: 1.1fr 1fr;
+}
+.hero-left {
+  margin: auto 0;
 }
 .eyebrow { 
   font-size: .8rem;
@@ -164,4 +170,67 @@ img {
   font-size: clamp(36px, 5vw, 64px);
   font-weight: 900;
   letter-spacing: .25em;
+}
+
+/* About */
+.about-grid {
+  display: flex;
+  justify-content: space-between;   /* gap 대체 */
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 16px;
+  margin-top: 16px;
+}
+.about-left { width: 55%; }
+.about-right { width: 40%; }
+/* 제목/문단 */
+.h2 { font-size: 36px; font-weight: 800; }
+.para {
+  margin-top: 12px;
+  color: #d7d7d7;
+  line-height: 1.7;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: calc(3 * 310px + 2 * 10px);
+  margin-top: 16px;
+}
+.chip {
+  flex: 0 0 calc((100% - 2 * 10px) / 2);
+  max-width: 310px;  
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  font-size: 16px;
+}
+.about-right {
+  display: flex;
+  flex-wrap: wrap;
+}
+.thumb {
+  aspect-ratio: 1 / 1;
+  width: 48%;
+  margin: 1%;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+.thumb::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* == top: 0; left: 0; right: 0; bottom: 0; */
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s;
+}
+.thumb:hover::before {
+  transform: scale(1.2);
 }
