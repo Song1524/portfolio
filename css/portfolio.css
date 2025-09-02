@@ -234,3 +234,38 @@ img {
 .thumb:hover::before {
   transform: scale(1.2);
 }
+
+/* Project */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.card-group {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card {
+  width: 30%;
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 20px;
+}
+.card-img  img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+
+}
+.card-text {
+  padding: 14px;
+
+}
+.tag {
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 999px;
+  font-size: 14px;
+  padding: 2px 8px;
+}
