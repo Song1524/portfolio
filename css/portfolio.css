@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 html, body {
-  height:100%
+  height:100%;
+  /* overflow-x: hidden; */
 }
 html {
   /* 스크롤 이동을 부드럽게 */
@@ -241,31 +242,82 @@ img {
   justify-content: space-between;
   align-items: end;
 }
-.card-group {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.projects-swiper {
+  position: relative;
+  padding: 0 80px 30px;
+  overflow: hidden;
 }
-.card {
-  width: 30%;
+.projects-swiper .swiper-slide {
+  height: auto;
+}
+.projects-swiper .swiper-pagination {
+  bottom: -5px;
+  text-align: center;
+}
+.projects-swiper .swiper-pagination-bullet {
+  background: #aaa;
+}
+.projects-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  height: 100%;
+  top: 0;
+  color: #fff;
+}
+
+  .card {
   background-color: rgba(255, 255, 255, .1);
   border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
-.card-img  img {
+.card-img {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.card-img img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
-
+  transition: 0.5s;
+}
+.card-img img:hover {
+  transform: scale(1.2);
 }
 .card-text {
   padding: 14px;
+}
+.card-text h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.card-text p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 .tag {
-  border: 1px solid rgba(255, 255, 255, .1);
+  display: inline-block;
+  padding: 4px 8px;
   border-radius: 999px;
-  font-size: 14px;
-  padding: 2px 8px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.06);
+  font-size: 13px;
+  white-space: nowrap;
 }
