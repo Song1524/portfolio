@@ -23,3 +23,21 @@ new Swiper('.projects-swiper', {
         clickable: true
     }
 });
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
+
+// 페이지 최상단으로 이동
+const toTopEl = document.querySelector('.to-top');
+
+window.addEventListener('scroll', function () {
+    const goTop = document.querySelector('.to-top');
+
+    if (window.scrollY > 400) {
+    goTop.style.opacity = 1;
+    goTop.style.transform = 'translateX(0)';
+    } else {
+    goTop.style.opacity = 0;
+    goTop.style.transform = 'translateX(100px)';
+    }
+});
