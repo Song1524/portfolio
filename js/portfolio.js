@@ -8,19 +8,47 @@ window.addEventListener('scroll', function () {
     gauge.style.width = gaugeRatio + '%';
 })
 
-new Swiper('.projects-swiper', {
-    direction: 'horizontal',
+const swiper = new Swiper('.projects-swiper', {
     loop: true,
     slidesPerView: 3,
     spaceBetween: 18,
-    navigation: {
-    nextEl: '.projects-swiper .swiper-button-next',
-    prevEl: '.projects-swiper .swiper-button-prev',
-    },
     speed: 800,
+    centeredSlides: true,
+    watchSlidesProgress: true,
+
+    effect: 'creative',
+    creativeEffect: {
+    limitProgress: 2,
+    perspective: false,
+    prev: { translate: ['-105%', 0, 0], opacity: 0.5, scale: 0.9 },
+    next: { translate: ['105%', 0, 0],  opacity: 0.5, scale: 0.9 },
+    },
+
+    navigation: {
+        nextEl: '.projects-swiper .swiper-button-next',
+        prevEl: '.projects-swiper .swiper-button-prev',
+    },
+
     pagination: {
         el: '.projects-swiper .swiper-pagination',
-        clickable: true
+        clickable: true,
+    },
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            centeredSlides: true,
+            spaceBetween: 14
+        },
+        768: {
+            slidesPerView: 2,
+            slidesPerGroup: 1
+        },
+        1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 1
+        }
     }
 });
 
