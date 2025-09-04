@@ -508,7 +508,7 @@ img {
   }
   .skill-list > li {
     width: calc(50% - 20px);
-    min-width: 180px;
+    min-width: 160px;
   }
   .contact-box {
     display: block;
@@ -550,7 +550,7 @@ img {
   .thumb { flex: 0 0 calc(50% - 10px); width: auto; margin: 0; }
   .skill-list li h3 { font-size: 28px; }
   .skill-list > li {
-    width: 45%;
+    width: 40%;
     font-size: 12px;
   }
   .card-text { padding: 12px; }
