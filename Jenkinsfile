@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['ssh-auth']) {
                     sh '''
-                        HOST="ubuntu@43.200.2.49"
+                        HOST="ubuntu@3.37.16.182"
                         TARGET="/var/www/html/project"
                         TMP="/home/ubuntu/project_tmp"
 
