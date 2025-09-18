@@ -12,7 +12,7 @@ pipeline {
                 sshagent(credentials: ['ssh-auth']) {
                     sh '''
                         HOST="ubuntu@3.37.16.182"
-                        TARGET="/var/www/html/project"
+                        TARGET="/var/www/html"
                         TMP="/home/ubuntu/project_tmp"
 
                         # 임시 경로 준비
